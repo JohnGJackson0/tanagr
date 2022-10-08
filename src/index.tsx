@@ -3,6 +3,7 @@ import React from "react"
 import { StyleSheet, Text, View, Image } from "react-native"
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native'
+import { signUpConfig } from "./auth/signUpConfig"
 
 function App() {
   return (
@@ -31,4 +32,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, { signUpConfig });

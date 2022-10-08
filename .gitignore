@@ -58,11 +58,6 @@ web-build/
 
 .vscode
 
-
-#amplify is auto generated and private so do something like:
-#sudo amplify configure --appId [id here] --envName staging
-#sudo amplify pull 
-
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
