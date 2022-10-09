@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  GestureResponderEvent,
   Pressable,
   Text,
 } from "react-native";
 
 interface ButtonParam {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: Function;
   title: String;
 }
 
@@ -14,7 +13,7 @@ interface ButtonParam {
 export function Button(props: ButtonParam) : JSX.Element {
   const { onPress, title } = props;
   return (
-    <Pressable {...props} onPress={onPress}>
+    <Pressable {...props} onPress={() => onPress()}>
       <Text>{title}</Text>
     </Pressable>
   );

@@ -13,7 +13,7 @@ function App(): JSX.Element {
     <View style={styles.container}>
       <Button
         title="log out"
-        onPress={() => signOut}
+        onPress={signOut}
       />
       <StatusBar style="auto" />
     </View>
