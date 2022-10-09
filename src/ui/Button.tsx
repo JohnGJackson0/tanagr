@@ -2,7 +2,6 @@ import React from "react";
 import {
   GestureResponderEvent,
   Pressable,
-  StyleSheet,
   Text,
 } from "react-native";
 
@@ -12,7 +11,7 @@ interface ButtonParam {
 }
 
 // function has small performance benefit over arrow
-export function Button(props: ButtonParam) {
+export function Button(props: ButtonParam) : JSX.Element {
   const { onPress, title } = props;
   return (
     <Pressable {...props} onPress={onPress}>

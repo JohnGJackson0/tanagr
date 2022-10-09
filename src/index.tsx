@@ -1,21 +1,19 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-// @ts-ignore
+import { StyleSheet, View } from "react-native";
+// @ts-expect-error
 import { withAuthenticator } from "aws-amplify-react-native";
-import { signUpConfig } from "./auth/signUpConfig";
-import { theme } from "./auth/theme";
+import { signUpConfig } from "./auth/ui/signUpConfig";
 import { Button } from "./ui";
-import { Auth } from "aws-amplify";
+import { signOut } from "./auth/lib/auth.utils";
+import { theme } from "./auth/ui/theme";
 
-function App() {
+function App(): JSX.Element {
   return (
     <View style={styles.container}>
       <Button
         title="log out"
-        onPress={async () => {
-          await Auth.signOut();
-        }}
+        onPress={() => signOut}
       />
       <StatusBar style="auto" />
     </View>

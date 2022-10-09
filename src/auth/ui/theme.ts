@@ -1,6 +1,4 @@
-import React from "react";
-
-// @ts-ignore
+// @ts-expect-error
 import { AmplifyTheme } from "aws-amplify-react-native";
 
 export const theme = {
