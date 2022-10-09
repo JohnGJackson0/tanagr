@@ -4,15 +4,16 @@ import { StyleSheet, Text, View, Image } from "react-native"
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native'
 import { signUpConfig } from "./auth/signUpConfig"
+import { theme } from "./auth/theme"
+import { Button } from "./ui"
+import { Auth } from 'aws-amplify';
 
 function App() {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("./assets/adaptive-icon.png")}
-        style={styles.logo}
-      />
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Button title="log out" onPress={async () => {
+        await Auth.signOut();
+      }} />
       <StatusBar style="auto" />
     </View>
   )
@@ -32,4 +33,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default withAuthenticator(App, { signUpConfig });
+export default withAuthenticator(App, { signUpConfig, theme });
