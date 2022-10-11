@@ -1,0 +1,24 @@
+org: johngjackson0
+app: tanagrbe
+service: aws-node-express-api-project
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+plugins:
+  - aws-amplify-serverless-plugin
+
+custom:
+  stage: ${opt:stage, "dev"}
+  amplify:
+    - filename: src/aws-exports.js
+      type: javascript
+
+package:
+  exclude:
+    - node_modules/**
+    - amplify/**
+    - public/**
+    - src/**
+    - yarn.lock
