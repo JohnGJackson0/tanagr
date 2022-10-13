@@ -28,8 +28,6 @@ provider:
   environment:
     POSTS_TABLE: ${self:custom.tableName}
 
-plugins:
-  - aws-amplify-serverless-plugin
 
 functions:
   create:

@@ -7,10 +7,12 @@ import { signUpConfig } from "./auth/ui/signUpConfig";
 import { Button } from "./ui";
 import { signOut } from "./auth/lib/auth.utils";
 import { theme } from "./auth/ui/theme";
+import { Posts } from "./ui/Posts";
 
 function App(): JSX.Element {
   return (
     <View style={styles.container}>
+      <Posts />
       <Button title="log out" onPress={signOut} />
       <StatusBar style="auto" />
     </View>

@@ -46,7 +46,7 @@
         "IdentityPoolName": "testAuthIdentityPool__staging",
         "UserPoolName": "tanagr"
       },
-      "lastPushTimeStamp": "2022-10-11T12:02:00.487Z",
+      "lastPushTimeStamp": "2022-10-13T21:20:34.313Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tanagr-staging-111416-deployment/amplify-cfn-templates/auth/tanagr-cloudformation-template.json",
         "logicalId": "authtanagr"
