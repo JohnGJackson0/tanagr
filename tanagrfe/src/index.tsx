@@ -11,10 +11,7 @@ import { theme } from "./auth/ui/theme";
 function App(): JSX.Element {
   return (
     <View style={styles.container}>
-      <Button
-        title="log out"
-        onPress={signOut}
-      />
+      <Button title="log out" onPress={signOut} />
       <StatusBar style="auto" />
     </View>
   );

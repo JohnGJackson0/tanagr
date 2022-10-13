@@ -1,0 +1,62 @@
+org: johngjackson0
+app: tanagrbe
+service: aws-node-express-api-project
+
+custom:
+  stage: ${opt:stage, "dev"}
+  amplify:
+    - filename: ../tanagrfe/src/aws-exports.js
+      type: javascript
+  tableName: 'posts-table'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ PostsTable, Arn ]
+  environment:
+    POSTS_TABLE: ${self:custom.tableName}
+
+plugins:
+  - aws-amplify-serverless-plugin
+
+functions:
+  create:
+    handler: handler/createPost.createPost
+    events:
+      - http:
+          path: posts
+          method: post
+          cors: true
+  get:
+    handler: handler/getPosts.getPosts
+    events:
+      - http:
+          path: posts
+          method: get
+          cors: true
+
+resources:
+  Resources:
+    PostsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.tableName}

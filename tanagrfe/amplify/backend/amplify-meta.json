@@ -1,0 +1,56 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tanagr-staging-111416-authRole",
+      "UnauthRoleArn": "arn:aws:iam::934002035790:role/amplify-tanagr-staging-111416-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::934002035790:role/amplify-tanagr-staging-111416-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tanagr-staging-111416-deployment",
+      "UnauthRoleName": "amplify-tanagr-staging-111416-unauthRole",
+      "StackName": "amplify-tanagr-staging-111416",
+      "StackId": "arn:aws:cloudformation:us-east-1:934002035790:stack/amplify-tanagr-staging-111416/060d2ff0-40b1-11ed-abe7-126e4ccc5485",
+      "AmplifyAppId": "d1w9656psvcrk2"
+    }
+  },
+  "auth": {
+    "tanagr": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL",
+          "NAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OPTIONAL",
+        "mfaTypes": [
+          "TOTP"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "UserPoolId": "us-east-1_tjzPUUx0E",
+        "AppClientIDWeb": "2tcfcu1o5j0aifgra9vcmm1mcu",
+        "AppClientID": "3upmenqljpuoe5u6k17dcb60sm",
+        "IdentityPoolId": "us-east-1:4db4ea69-bfcc-4b1b-a09e-df59f7d7b001",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:934002035790:userpool/us-east-1_tjzPUUx0E",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "tanagr"
+      },
+      "lastPushTimeStamp": "2022-10-11T12:02:00.487Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-tanagr-staging-111416-deployment/amplify-cfn-templates/auth/tanagr-cloudformation-template.json",
+        "logicalId": "authtanagr"
+      }
+    }
+  }
+}

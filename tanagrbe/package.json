@@ -1,0 +1,14 @@
+{
+  "name": "tanagrbe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "John Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "aws-amplify-serverless-plugin": "^1.4.1",
+    "aws-sdk": "^2.1231.0",
+    "serverless": "^3.23.0",
+    "serverless-http": "^3.0.3",
+    "uuid": "^9.0.0"
+  }
+}
