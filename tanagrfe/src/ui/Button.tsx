@@ -6,7 +6,6 @@ interface ButtonParam {
   title: String;
 }
 
-// function has small performance benefit over arrow
 export function Button(props: ButtonParam): JSX.Element {
   const { onPress, title } = props;
   return (

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-
+import { cancelRequest, getRequest, getRequestCancelToken } from "../lib/api";
 interface UseFetch<T> {
   data: T | undefined;
   isLoading: boolean;
@@ -10,16 +9,16 @@ interface UseFetch<T> {
 
 function useFetch<T>(url: string): UseFetch<T> {
   const [data, setData] = useState<T>();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    const source = axios.CancelToken.source();
-    axios
-      .get(url, { cancelToken: source.token })
+    const source = getRequestCancelToken();
+
+    getRequest<T>(url)
       .then((res) => {
         setIsLoading(false);
         setData(res.data);
@@ -30,7 +29,7 @@ function useFetch<T>(url: string): UseFetch<T> {
         setErrorMessage(err);
       });
     return () => {
-      source.cancel();
+      cancelRequest(source);
     };
   }, [url]);
 
