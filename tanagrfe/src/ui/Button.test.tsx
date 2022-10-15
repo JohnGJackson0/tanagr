@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react-native";
+import { fireEvent, render } from "../jest/test.utils";
 import { Button } from "./button";
 
 it("calls the callback", () => {

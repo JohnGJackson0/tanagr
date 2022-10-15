@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render } from "../jest/test.utils";
 import { GeneralText } from "./GeneralText";
 
 describe("General Text", () => {

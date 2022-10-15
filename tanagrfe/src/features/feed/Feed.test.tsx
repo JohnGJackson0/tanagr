@@ -1,8 +1,8 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react-native";
 import { Feed } from "./Feed";
 import { StubPostDTOHappyPath } from "../../jest/PostsDTO.stub";
 import * as api from "../../lib/api";
+import { render, waitFor } from "../../jest/test.utils";
 
 describe("Feed", () => {
   describe("sad path", () => {

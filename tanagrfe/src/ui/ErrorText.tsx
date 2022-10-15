@@ -1,10 +1,22 @@
 import React from "react";
-import { Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
+import { getTheme } from "./ui.utils";
 
 interface ErrorParam {
-  children: string;
+  children?: string;
 }
 
 export function ErrorText({ children }: ErrorParam): JSX.Element {
-  return <Text>{children}</Text>;
+  const theme = getTheme();
+  return (
+    <Text style={[styles.text, { color: theme.colors.negatives }]}>
+      {children}
+    </Text>
+  );
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 24,
+  },
+});

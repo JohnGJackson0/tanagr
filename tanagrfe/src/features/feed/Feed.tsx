@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { PRE_PROD_BASE_URL } from "../../app.const";
 import useFetch from "../../hooks/useFetch";
 import { PostsDTO } from "./posts.types";
-import { Post } from "./posts";
+import { FeedItem } from "./FeedItem";
 import { ErrorText, Screen, LoadingIndicator } from "../../ui/";
 
 export function Feed(): JSX.Element {
@@ -23,7 +23,7 @@ export function Feed(): JSX.Element {
         <FlatList
           testID="FeedContent"
           data={data?.Items}
-          renderItem={Post}
+          renderItem={FeedItem}
           keyExtractor={(item) => item.id}
         />
       )}
