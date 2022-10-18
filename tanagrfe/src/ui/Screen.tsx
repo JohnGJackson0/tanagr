@@ -21,7 +21,5 @@ export function Screen(props: BackgroundProps): JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
